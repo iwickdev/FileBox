@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>FileBox</title>
+        <link rel="icon" href="/accets/Logo-100x100.png" />
+        <style>
+            body {
+                background-color: rgb(29, 29, 29);
+                color: white;
+            }
+
+            #title-text {
+                font-size: 67px;
+                padding-left: 10px;
+                padding-right: 500px;
+            }
+            
+            .named {
+                width: 50%;
+            }
+
+            .sized {
+                width: 20%;
+            }
+
+            .options-btn {
+                width: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <table style="width: 100%; border: 1px solid white;">
+            <tr>
+                <td style="width: 0px"><img src="/accets/Logo-100x100.png" width="89px" height="67px" /></td>
+                <td id="title-text">FileBox</td>
+                <td>
+                    <form enctype="multipart/form-data" action="/" style="text-align: right; padding-right: 10px;" method="post">
+                        <input style="width: 500px;" type="file" name="upfile">
+                        <button type="submit">Upload</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="/?logout=true"><button>Logout</button></a>
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%;">
+            <tr>
+                <th style="width: 50%; text-align: left;"><h1>Name</h1></th>
+                <th style="width: 10%; text-align: left;"><h1>Size</h1></th>
+                <th style="width: 10%; text-align: left;"><h1>Options</h1></th>
+            </tr>
+            {{ fileslist }}
+        </table>
+    </body>
+
+</html>

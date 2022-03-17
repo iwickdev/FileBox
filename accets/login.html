@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>FileHost - Login</title>
+        <link rel="icon" href="/accets/Logo-100x100.png" width="178px" height="134px" />
+        <style>
+            body {
+                color: white;
+                background-color: rgb(29, 29, 29);
+            }
+
+            .center {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .login {
+                margin-top: 50px;
+                width: 600px;
+            }
+
+            .login form {
+                margin: 25px;
+            }
+
+            .login input {
+                width: 400px;
+            }
+
+            .login button {
+                width: 408px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="center">
+            <img src="/accets/Logo-100x100.png" width="178px" height="134px" />
+            <h1>FileBox</h1>
+            <p>Authentication requried to continue</p>
+        </div>
+
+        <center>
+            <div class="login">
+                <form action="/auth" method="post">
+                    <input type="text" name="username" placeholder="Username"><br>
+                    <input type="password" name="password" placeholder="Password"><br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </center>
+    </body>
+
+</html>
