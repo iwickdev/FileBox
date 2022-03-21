@@ -2,10 +2,13 @@ package pages
 
 import (
 	"filebox/auth"
+	"filebox/config"
 	"filebox/render"
 	"net/http"
 	"time"
 )
+
+var Users config.Configuration
 
 func Auth(w http.ResponseWriter, r *http.Request) {
 	if _, ok := auth.Validate(w, r); ok {
@@ -17,7 +20,7 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	usrname := r.Form.Get("username")
 	pswword := r.Form.Get("password")
 
-	if (usrname == "") || (pswword == "") {
+	if (Users.Get(usrname) == "") || (pswword != Users.Get(usrname)) {
 		w.WriteHeader(301)
 		w.Write([]byte("Access Denied\nProvided credentials are invalid"))
 		return

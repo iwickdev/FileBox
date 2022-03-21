@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var StoragePath string = "storage"
+var StoragePath string
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	sess, loggedin := auth.Validate(w, r)
