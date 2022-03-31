@@ -48,7 +48,10 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.URL.Query().Get("rmf") != "" {
-		os.Remove(StoragePath + r.URL.Path + "/" + r.URL.Query().Get("rmf"))
+		err := os.Remove(StoragePath + r.URL.Path + "/" + r.URL.Query().Get("rmf"))
+		if err != nil {
+			os.RemoveAll(StoragePath + r.URL.Path + "/" + r.URL.Query().Get("rmf"))
+		}
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 		return
 	}
