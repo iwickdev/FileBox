@@ -4,6 +4,7 @@ import (
 	"filebox/auth"
 	"filebox/config"
 	"filebox/render"
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -25,6 +26,8 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Access Denied\nProvided credentials are invalid"))
 		return
 	}
+
+	fmt.Println(usrname + " logged in " + time.Now().Format(time.UnixDate) + " using " + r.RemoteAddr)
 
 	auth.Add(w, r, time.Now().Add(time.Minute*30))
 
