@@ -34,10 +34,16 @@
 
         <table style="width: 100%; border: 1px solid white;">
             <tr>
-                <td style="width: 0px"><img src="/accets/Logo-100x100.png" width="89px" height="67px" /></td>
+                <td style="width: 0px"><a href="/"><img src="/accets/Logo-100x100.png" width="89px" height="67px" /></a></td>
                 <td id="title-text">FileBox</td>
                 <td>
-                    <form enctype="multipart/form-data" action="/" style="text-align: right; padding-right: 10px;" method="post">
+                    <form enctype="application/x-www-form-urlencoded" action="" method="get">
+                        <input type="text" name="md">
+                        <button type="submit">Create Directory</button>
+                    </form>
+                </td>
+                <td>
+                    <form enctype="multipart/form-data" style="text-align: right; padding-right: 10px;" method="post">
                         <input style="width: 500px;" type="file" name="upfile">
                         <button type="submit">Upload</button>
                     </form>
